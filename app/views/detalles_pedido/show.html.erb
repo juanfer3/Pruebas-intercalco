@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pedido:</strong>
+  <%= @detalle_pedido.pedido %>
+</p>
+
+<p>
+  <strong>Sustrato:</strong>
+  <%= @detalle_pedido.sustrato %>
+</p>
+
+<p>
+  <strong>Tecnica de impresion:</strong>
+  <%= @detalle_pedido.tecnica_de_impresion %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @detalle_pedido.cantidad %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @detalle_pedido.precio %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @detalle_pedido.total %>
+</p>
+
+<%= link_to 'Edit', edit_detalle_pedido_path(@detalle_pedido) %> |
+<%= link_to 'Back', detalles_pedido_path %>

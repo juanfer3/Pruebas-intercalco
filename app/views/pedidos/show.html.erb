@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contacto:</strong>
+  <%= @pedido.contacto %>
+</p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @pedido.Producto %>
+</p>
+
+<p>
+  <strong>Tipo de trabajo:</strong>
+  <%= @pedido.tipo_de_trabajo %>
+</p>
+
+<p>
+  <strong>Fecha entrega:</strong>
+  <%= @pedido.fecha_entrega %>
+</p>
+
+<p>
+  <strong>Fecha de pedido:</strong>
+  <%= @pedido.fecha_de_pedido %>
+</p>
+
+<p>
+  <strong>Numero cotizacion:</strong>
+  <%= @pedido.numero_cotizacion %>
+</p>
+
+<p>
+  <strong>Forma de pago:</strong>
+  <%= @pedido.forma_de_pago %>
+</p>
+
+<p>
+  <strong>Arte:</strong>
+  <%= @pedido.arte %>
+</p>
+
+<p>
+  <strong>Observaciones:</strong>
+  <%= @pedido.observaciones %>
+</p>
+
+<p>
+  <strong>Estado pedidos:</strong>
+  <%= @pedido.estado_pedidos %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @pedido.estado %>
+</p>
+
+<%= link_to 'Edit', edit_pedido_path(@pedido) %> |
+<%= link_to 'Back', pedidos_path %>

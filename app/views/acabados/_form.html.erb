@@ -1,0 +1,27 @@
+<%= form_with(model: acabado, local: true) do |form| %>
+  <% if acabado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(acabado.errors.count, "error") %> prohibited this acabado from being saved:</h2>
+
+      <ul>
+      <% acabado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tipo_de_acabado %>
+    <%= form.text_field :tipo_de_acabado, id: :acabado_tipo_de_acabado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :acabado_descripcion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

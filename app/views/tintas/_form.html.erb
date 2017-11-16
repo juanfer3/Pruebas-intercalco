@@ -1,0 +1,32 @@
+<%= form_with(model: tinta, local: true) do |form| %>
+  <% if tinta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tinta.errors.count, "error") %> prohibited this tinta from being saved:</h2>
+
+      <ul>
+      <% tinta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo, id: :tinta_codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pantone %>
+    <%= form.text_field :pantone, id: :tinta_pantone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :tinta_descripcion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

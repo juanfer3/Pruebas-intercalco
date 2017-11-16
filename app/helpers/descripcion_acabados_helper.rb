@@ -1,0 +1,2 @@
+module DescripcionAcabadosHelper
+end

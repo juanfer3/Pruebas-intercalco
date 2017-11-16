@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Detalle pedido:</strong>
+  <%= @cantidad_tinta.detalle_pedido %>
+</p>
+
+<p>
+  <strong>Tinta:</strong>
+  <%= @cantidad_tinta.tinta %>
+</p>
+
+<%= link_to 'Edit', edit_cantidad_tinta_path(@cantidad_tinta) %> |
+<%= link_to 'Back', cantidades_tintas_path %>

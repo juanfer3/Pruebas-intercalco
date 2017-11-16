@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Descripcion Acabados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Detalle pedido</th>
+      <th>Acabado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @descripcion_acabados.each do |descripcion_acabado| %>
+      <tr>
+        <td><%= descripcion_acabado.detalle_pedido %></td>
+        <td><%= descripcion_acabado.acabado %></td>
+        <td><%= link_to 'Show', descripcion_acabado %></td>
+        <td><%= link_to 'Edit', edit_descripcion_acabado_path(descripcion_acabado) %></td>
+        <td><%= link_to 'Destroy', descripcion_acabado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Descripcion Acabado', new_descripcion_acabado_path %>

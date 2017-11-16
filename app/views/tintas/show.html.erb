@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @tinta.codigo %>
+</p>
+
+<p>
+  <strong>Pantone:</strong>
+  <%= @tinta.pantone %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @tinta.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_tinta_path(@tinta) %> |
+<%= link_to 'Back', tintas_path %>

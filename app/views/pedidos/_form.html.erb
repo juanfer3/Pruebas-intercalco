@@ -1,0 +1,72 @@
+<%= form_with(model: pedido, local: true) do |form| %>
+  <% if pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+
+      <ul>
+      <% pedido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :contacto_id %>
+    <%= form.text_field :contacto_id, id: :pedido_contacto_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Producto %>
+    <%= form.text_field :Producto, id: :pedido_Producto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo_de_trabajo %>
+    <%= form.text_field :tipo_de_trabajo, id: :pedido_tipo_de_trabajo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_entrega %>
+    <%= form.text_field :fecha_entrega, id: :pedido_fecha_entrega %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_de_pedido %>
+    <%= form.text_field :fecha_de_pedido, id: :pedido_fecha_de_pedido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_cotizacion %>
+    <%= form.text_field :numero_cotizacion, id: :pedido_numero_cotizacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :forma_de_pago %>
+    <%= form.text_field :forma_de_pago, id: :pedido_forma_de_pago %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arte %>
+    <%= form.text_field :arte, id: :pedido_arte %>
+  </div>
+
+  <div class="field">
+    <%= form.label :observaciones %>
+    <%= form.text_area :observaciones, id: :pedido_observaciones %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado_pedidos %>
+    <%= form.text_field :estado_pedidos, id: :pedido_estado_pedidos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.check_box :estado, id: :pedido_estado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

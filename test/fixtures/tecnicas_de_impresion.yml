@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tecnica: MyString
+  descripcion: MyString
+  estado: false
+
+two:
+  tecnica: MyString
+  descripcion: MyString
+  estado: false

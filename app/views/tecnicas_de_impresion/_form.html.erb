@@ -1,0 +1,32 @@
+<%= form_with(model: tecnica_de_impresion, local: true) do |form| %>
+  <% if tecnica_de_impresion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tecnica_de_impresion.errors.count, "error") %> prohibited this tecnica_de_impresion from being saved:</h2>
+
+      <ul>
+      <% tecnica_de_impresion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tecnica %>
+    <%= form.text_field :tecnica, id: :tecnica_de_impresion_tecnica %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :tecnica_de_impresion_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.check_box :estado, id: :tecnica_de_impresion_estado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

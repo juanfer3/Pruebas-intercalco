@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pedido: one
+  sustrato: MyString
+  tecnica_de_impresion: one
+  cantidad: 1.5
+  precio: 1.5
+  total: 1.5
+
+two:
+  pedido: two
+  sustrato: MyString
+  tecnica_de_impresion: two
+  cantidad: 1.5
+  precio: 1.5
+  total: 1.5

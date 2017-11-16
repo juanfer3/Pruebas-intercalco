@@ -1,0 +1,27 @@
+<%= form_with(model: cantidad_tinta, local: true) do |form| %>
+  <% if cantidad_tinta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cantidad_tinta.errors.count, "error") %> prohibited this cantidad_tinta from being saved:</h2>
+
+      <ul>
+      <% cantidad_tinta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :detalle_pedido_id %>
+    <%= form.text_field :detalle_pedido_id, id: :cantidad_tinta_detalle_pedido_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tinta_id %>
+    <%= form.text_field :tinta_id, id: :cantidad_tinta_tinta_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

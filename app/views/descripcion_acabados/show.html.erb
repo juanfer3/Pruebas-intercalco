@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Detalle pedido:</strong>
+  <%= @descripcion_acabado.detalle_pedido %>
+</p>
+
+<p>
+  <strong>Acabado:</strong>
+  <%= @descripcion_acabado.acabado %>
+</p>
+
+<%= link_to 'Edit', edit_descripcion_acabado_path(@descripcion_acabado) %> |
+<%= link_to 'Back', descripcion_acabados_path %>

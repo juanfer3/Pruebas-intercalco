@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tecnicas De Impresion</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tecnica</th>
+      <th>Descripcion</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tecnicas_de_impresion.each do |tecnica_de_impresion| %>
+      <tr>
+        <td><%= tecnica_de_impresion.tecnica %></td>
+        <td><%= tecnica_de_impresion.descripcion %></td>
+        <td><%= tecnica_de_impresion.estado %></td>
+        <td><%= link_to 'Show', tecnica_de_impresion %></td>
+        <td><%= link_to 'Edit', edit_tecnica_de_impresion_path(tecnica_de_impresion) %></td>
+        <td><%= link_to 'Destroy', tecnica_de_impresion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tecnica De Impresion', new_tecnica_de_impresion_path %>

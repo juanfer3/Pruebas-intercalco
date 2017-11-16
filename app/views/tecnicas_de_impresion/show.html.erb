@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tecnica:</strong>
+  <%= @tecnica_de_impresion.tecnica %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @tecnica_de_impresion.descripcion %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @tecnica_de_impresion.estado %>
+</p>
+
+<%= link_to 'Edit', edit_tecnica_de_impresion_path(@tecnica_de_impresion) %> |
+<%= link_to 'Back', tecnicas_de_impresion_path %>

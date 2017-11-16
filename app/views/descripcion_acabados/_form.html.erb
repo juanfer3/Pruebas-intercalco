@@ -1,0 +1,27 @@
+<%= form_with(model: descripcion_acabado, local: true) do |form| %>
+  <% if descripcion_acabado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(descripcion_acabado.errors.count, "error") %> prohibited this descripcion_acabado from being saved:</h2>
+
+      <ul>
+      <% descripcion_acabado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :detalle_pedido_id %>
+    <%= form.text_field :detalle_pedido_id, id: :descripcion_acabado_detalle_pedido_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acabado_id %>
+    <%= form.text_field :acabado_id, id: :descripcion_acabado_acabado_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

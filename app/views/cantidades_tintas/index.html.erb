@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cantidades Tintas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Detalle pedido</th>
+      <th>Tinta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cantidades_tintas.each do |cantidad_tinta| %>
+      <tr>
+        <td><%= cantidad_tinta.detalle_pedido %></td>
+        <td><%= cantidad_tinta.tinta %></td>
+        <td><%= link_to 'Show', cantidad_tinta %></td>
+        <td><%= link_to 'Edit', edit_cantidad_tinta_path(cantidad_tinta) %></td>
+        <td><%= link_to 'Destroy', cantidad_tinta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cantidad Tinta', new_cantidad_tinta_path %>
