@@ -1,4 +1,4 @@
-<%= form_with(model: pedido, local: true) do |form| %>
+<%= simple_form_for (@pedido) do |f| %>
   <% if pedido.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
@@ -10,63 +10,91 @@
       </ul>
     </div>
   <% end %>
+  <table>
+    <thead>
+      <th>Contacto</th>
+      <th>Producto</th>
+      <th>Tipo de Trabajo</th>
+      <th>Fecha de Entrega</th>
+      <th>Fecha de Pedido</th>
+      <th>Numero De Cotización</th>
+      <th>Forma de pago</th>
+      <th>Pedido de Arte</th>
+      <th>Observaciones</th>
+    </thead>
+    <tbody>
+      <td class="field">
+        <%= f.label :contacto_id %>
+        <%= f.association :contacto%>
+      </td>
 
-  <div class="field">
-    <%= form.label :contacto_id %>
-    <%= form.text_field :contacto_id, id: :pedido_contacto_id %>
-  </div>
+      <td class="field">
+        <%= f.label :Producto %>
+        <%= f.text_field :Producto, id: :pedido_Producto %>
+      </td>
 
-  <div class="field">
-    <%= form.label :Producto %>
-    <%= form.text_field :Producto, id: :pedido_Producto %>
-  </div>
+      <td class="field">
+        <%= f.label :tipo_de_trabajo %>
+        <%= f.text_field :tipo_de_trabajo, id: :pedido_tipo_de_trabajo %>
+      </td>
 
-  <div class="field">
-    <%= form.label :tipo_de_trabajo %>
-    <%= form.text_field :tipo_de_trabajo, id: :pedido_tipo_de_trabajo %>
-  </div>
+      <td class="field">
+        <%= f.label :fecha_entrega %>
+        <%= f.text_field :fecha_entrega, id: :pedido_fecha_entrega %>
+      </td>
 
-  <div class="field">
-    <%= form.label :fecha_entrega %>
-    <%= form.text_field :fecha_entrega, id: :pedido_fecha_entrega %>
-  </div>
+      <td class="field">
+        <%= f.label :fecha_de_pedido %>
+        <%= f.text_field :fecha_de_pedido, id: :pedido_fecha_de_pedido %>
+      </td>
 
-  <div class="field">
-    <%= form.label :fecha_de_pedido %>
-    <%= form.text_field :fecha_de_pedido, id: :pedido_fecha_de_pedido %>
-  </div>
+      <td class="field">
+        <%= f.label :numero_cotizacion %>
+        <%= f.text_field :numero_cotizacion, id: :pedido_numero_cotizacion %>
+      </td>
 
-  <div class="field">
-    <%= form.label :numero_cotizacion %>
-    <%= form.text_field :numero_cotizacion, id: :pedido_numero_cotizacion %>
-  </div>
+      <td class="field">
+        <%= f.label :forma_de_pago %>
+        <%= f.text_field :forma_de_pago, id: :pedido_forma_de_pago %>
+      </td>
 
-  <div class="field">
-    <%= form.label :forma_de_pago %>
-    <%= form.text_field :forma_de_pago, id: :pedido_forma_de_pago %>
-  </div>
+      <td class="field">
+        <%= f.label :arte %>
+        <%= f.text_field :arte, id: :pedido_arte %>
+      </td>
 
-  <div class="field">
-    <%= form.label :arte %>
-    <%= form.text_field :arte, id: :pedido_arte %>
-  </div>
+      <td class="field">
+        <%= f.label :observaciones %>
+        <%= f.text_area :observaciones, id: :pedido_observaciones %>
+      </td>
+    </tbody>
+  </table>
 
-  <div class="field">
-    <%= form.label :observaciones %>
-    <%= form.text_area :observaciones, id: :pedido_observaciones %>
-  </div>
 
-  <div class="field">
-    <%= form.label :estado_pedidos %>
-    <%= form.text_field :estado_pedidos, id: :pedido_estado_pedidos %>
-  </div>
 
-  <div class="field">
-    <%= form.label :estado %>
-    <%= form.check_box :estado, id: :pedido_estado %>
-  </div>
+
+
+
+<table class="table">
+  <thead>
+    <th>Sustrato</th>
+    <th>Tecnica</th>
+    <th>Cantidad</th>
+    <th>Precio</th>
+    <th>Total</th>
+    <th></th>
+  </thead>
+  <tbody class='fields'>
+    <%= f.simple_fields_for :detalles_pedido do |builder| %>
+      <%= render "detalle_pedido", :f => builder %>
+    <% end %>
+  </tbody>
+</table>
+
+
 
   <div class="actions">
-    <%= form.submit %>
+    <%= link_to_add_row('Add Pedido', f, :detalles_pedido, class: 'btn btn-primary') %>
+    <%= f.submit %>
   </div>
 <% end %>

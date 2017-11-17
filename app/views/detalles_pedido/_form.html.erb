@@ -1,47 +1,16 @@
-<%= form_with(model: detalle_pedido, local: true) do |form| %>
-  <% if detalle_pedido.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(detalle_pedido.errors.count, "error") %> prohibited this detalle_pedido from being saved:</h2>
+<%= simple_form_for(@detalle_pedido) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% detalle_pedido.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :pedido_id %>
-    <%= form.text_field :pedido_id, id: :detalle_pedido_pedido_id %>
+  <div class="form-inputs">
+    <%= f.association :pedido %>
+    <%= f.input :sustrato %>
+    <%= f.association :tecnica_de_impresion %>
+    <%= f.input :cantidad %>
+    <%= f.input :precio %>
+    <%= f.input :total %>
   </div>
 
-  <div class="field">
-    <%= form.label :sustrato %>
-    <%= form.text_field :sustrato, id: :detalle_pedido_sustrato %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tecnica_de_impresion_id %>
-    <%= form.text_field :tecnica_de_impresion_id, id: :detalle_pedido_tecnica_de_impresion_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cantidad %>
-    <%= form.text_field :cantidad, id: :detalle_pedido_cantidad %>
-  </div>
-
-  <div class="field">
-    <%= form.label :precio %>
-    <%= form.text_field :precio, id: :detalle_pedido_precio %>
-  </div>
-
-  <div class="field">
-    <%= form.label :total %>
-    <%= form.text_field :total, id: :detalle_pedido_total %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

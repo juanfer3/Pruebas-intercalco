@@ -1,24 +1,30 @@
-<div class="field">
-  <%= form.label :sustrato %>
-  <%= form.text_field :sustrato, id: :detalle_pedido_sustrato %>
-</div>
 
-<div class="field">
-  <%= form.label :tecnica_de_impresion_id %>
-  <%= form.text_field :tecnica_de_impresion_id, id: :detalle_pedido_tecnica_de_impresion_id %>
-</div>
 
-<div class="field">
-  <%= form.label :cantidad %>
-  <%= form.text_field :cantidad, id: :detalle_pedido_cantidad %>
-</div>
+<tr>
+  <td>
+    <%= f.input :sustrato%>
+  </td>
+  <td>
+    <%= f.association :tecnica_de_impresion%>
+  </td>
 
-<div class="field">
-  <%= form.label :precio %>
-  <%= form.text_field :precio, id: :detalle_pedido_precio %>
-</div>
+<td>
+  <%= f.text_field :cantidad, id: :detalle_pedido_cantidad %>
+</td>
 
-<div class="field">
-  <%= form.label :total %>
-  <%= form.text_field :total, id: :detalle_pedido_total %>
-</div>
+<td class="field">
+
+  <%= f.text_field :precio, id: :detalle_pedido_precio %>
+</td>
+
+<td class="field">
+
+  <%= f.text_field :total, id: :detalle_pedido_total %>
+</td>
+
+<td>
+  <%= f.input_field :_destroy, as: :hidden %>
+  <%= link_to 'Delete', '#', class: 'remove_record' %>
+</td>
+
+</tr>

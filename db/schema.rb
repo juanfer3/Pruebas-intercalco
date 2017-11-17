@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116214721) do
+ActiveRecord::Schema.define(version: 20171117213310) do
 
   create_table "acabados", force: :cascade do |t|
     t.string "tipo_de_acabado"
@@ -71,6 +71,17 @@ ActiveRecord::Schema.define(version: 20171116214721) do
     t.datetime "updated_at", null: false
     t.index ["pedido_id"], name: "index_detalles_pedido_on_pedido_id"
     t.index ["tecnica_de_impresion_id"], name: "index_detalles_pedido_on_tecnica_de_impresion_id"
+  end
+
+  create_table "mini_pedidos", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "cantidad"
+    t.integer "pedido_id"
+    t.integer "tinta_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pedido_id"], name: "index_mini_pedidos_on_pedido_id"
+    t.index ["tinta_id"], name: "index_mini_pedidos_on_tinta_id"
   end
 
   create_table "pedidos", force: :cascade do |t|

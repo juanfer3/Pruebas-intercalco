@@ -50,7 +50,7 @@
   inflect.irregular 'correo', 'correos'
   inflect.irregular 'direccion', 'direcciones'
   inflect.irregular 'contacto', 'contactos'
-  
+  inflect.irregular 'mini_pedido', 'mini_pedidos'
 
 
  end

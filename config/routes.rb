@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  resources :detalles_pedido
+  resources :mini_pedidos
   resources :contactos
   resources :clientes
   resources :cantidades_tintas
   resources :descripcion_acabados
   resources :acabados
-  resources :detalles_pedido
   resources :pedidos
   resources :tecnicas_de_impresion
   resources :tintas

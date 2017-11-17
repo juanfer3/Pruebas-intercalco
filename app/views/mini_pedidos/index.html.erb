@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mini Pedidos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Pedido</th>
+      <th>Tinta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mini_pedidos.each do |mini_pedido| %>
+      <tr>
+        <td><%= mini_pedido.nombre %></td>
+        <td><%= mini_pedido.cantidad %></td>
+        <td><%= mini_pedido.pedido %></td>
+        <td><%= mini_pedido.tinta %></td>
+        <td><%= link_to 'Show', mini_pedido %></td>
+        <td><%= link_to 'Edit', edit_mini_pedido_path(mini_pedido) %></td>
+        <td><%= link_to 'Destroy', mini_pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mini Pedido', new_mini_pedido_path %>

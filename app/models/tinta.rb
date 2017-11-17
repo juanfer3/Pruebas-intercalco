@@ -1,5 +1,5 @@
 class Tinta < ApplicationRecord
-  has_many :contidades_tintas, inverse_of: :cliente, dependent: :destroy
- accepts_nested_attributes_for :contactos, reject_if: :all_blank, allow_destroy: true
+  has_many :mini_pedidos, inverse_of: :tinta, dependent: :destroy
+ accepts_nested_attributes_for :mini_pedidos, reject_if: :all_blank, allow_destroy: true
 
 end
