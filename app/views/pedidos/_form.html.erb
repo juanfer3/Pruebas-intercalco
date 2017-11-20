@@ -106,6 +106,49 @@
 
 
 <br>
+<h1>Facturar a</h1>
+<table>
+  <thead>
+    <th>Nombre</th>
+    <th>Nit</th>
+    <th>Telefono</th>
+    <th>Lugar de Facturación</th>
+    <th>Correo</th>
+    <th>Recibe</th>
+  </thead>
+  <tbody>
+      <%= f.simple_fields_for :facturas do |fac| %>
+    <tr>
+      <td>
+        <label for="">Nombre</label>
+        <%=fac.text_field :nombre %>
+      </td>
+      <td>
+        <label for="">Nit</label>
+        <%=fac.text_field :nit %>
+      </td>
+      <td>
+        <label for="">Telefono</label>
+        <%=fac.text_field :telefono %>
+      </td>
+      <td>
+        <label for="">Lugar de Facturación</label>
+        <%=fac.text_field :lugar_a_factura %>
+      </td>
+      <td>
+        <label for="">Correo</label>
+        <%=fac.text_field :correo %>
+      </td>
+      <td>
+        <label for="">Recibe</label>
+        <%=fac.text_field :recibe %>
+      </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
 <br>
 <br>
 
@@ -158,11 +201,65 @@
 <br>
 
 
+
+
+<h1>Despachos</h1>
+<table>
+  <thead>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <%= f.simple_fields_for :despachos do |des| %>
+    <tr>
+      <td>
+        <label for="">Nombre</label>
+        <%=
+        des.text_field :nombre
+        %>
+      </td>
+
+      <td>
+        <label for="">Lugar de Entrega</label>
+        <%=
+        des.text_field :lugar_de_entrega
+        %>
+      </td>
+
+      <td>
+        <label for="">Telefono</label>
+        <%=
+        des.text_field :telefono
+        %>
+      </td>
+
+      <td>
+        <label for="">Celular</label>
+        <%=
+        des.text_field :celular
+        %>
+      </td>
+      <td>
+        <label for="">Correo</label>
+        <%=
+        des.text_field :correo
+        %>
+      </td>
+
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <div class="field">
   <%= f.label :fecha_entrega %>
   <%= f.text_field :fecha_entrega, id: :pedido_fecha_entrega %>
 </div>
-
 <div>
 <%= f.submit %>
 </div>

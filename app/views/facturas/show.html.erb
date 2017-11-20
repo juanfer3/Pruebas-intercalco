@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @factura.cliente %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @factura.nombre %>
+</p>
+
+<p>
+  <strong>Nit:</strong>
+  <%= @factura.nit %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @factura.telefono %>
+</p>
+
+<p>
+  <strong>Lugar de factura:</strong>
+  <%= @factura.lugar_de_factura %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @factura.telefono %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @factura.correo %>
+</p>
+
+<p>
+  <strong>Recibe:</strong>
+  <%= @factura.recibe %>
+</p>
+
+<%= link_to 'Edit', edit_factura_path(@factura) %> |
+<%= link_to 'Back', facturas_path %>

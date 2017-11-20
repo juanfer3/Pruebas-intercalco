@@ -61,8 +61,6 @@
   inflect.irregular 'fecha_compromiso', 'fechas_compromiso'
   inflect.irregular 'total_fechas_decompromiso','totales_fechas_decompromiso'
 
- end
-
  inflect.irregular 'factura','facturas'
  inflect.irregular 'despacho', 'despachos'
  inflect.irregular 'lugar_a_factura','lugares_a_facturar'

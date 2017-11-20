@@ -15,6 +15,7 @@ class PedidosController < ApplicationController
   # GET /pedidos/new
   def new
     @pedido = Pedido.new
+    @pedido = Pedido.new
     @pedido.detalles_pedido.build
     @pedido.tiempos_de_entregas.build
     @contacto = Contacto.new
@@ -73,9 +74,10 @@ class PedidosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:contacto_id, :producto, :tipo_de_trabajo, :fecha_entrega, :fecha_de_pedido, :numero_pedido, :linea_de_impresion_id, :numero_cotizacion, :forma_de_pago, :arte, :observaciones, :estado_pedido, :total_fechas_decompromiso, :estado,#)
+      params.require(:pedido).permit(:contacto_id, :despacho_id, :factura_id, :producto, :tipo_de_trabajo, :fecha_entrega, :fecha_de_pedido, :numero_pedido, :linea_de_impresion_id, :numero_cotizacion, :forma_de_pago, :arte, :observaciones, :estado_pedido, :total_fechas_decompromiso, :estado, #)
       detalles_pedido_attributes:[:pedido_id, :descripcion, :producto, :sustrato, :tecnica_de_impresion_id, :tamano, :cantidad, :precio, :total],
-      tiempos_de_entregas_attributes:[:pedido_id, :cantidad, :fecha_compromiso, :costo])
-#      mini_pedidos_attributes:[:nombre, :cantidad, :pedido_id])
+      tiempos_de_entregas_attributes:[:pedido_id, :cantidad, :fecha_compromiso, :costo],
+      despachos_attributes:[:cliente_id, :nombre, :lugar_de_entrega, :telefono, :celular, :correo],
+      facturas_attributes:[:cliente_id, :nombre, :nit, :telefono, :lugar_de_factura, :telefono, :correo, :recibe])
     end
 end

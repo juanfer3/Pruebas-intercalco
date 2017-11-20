@@ -2,6 +2,8 @@
 
 one:
   contacto: one
+  despacho: one
+  factura: one
   producto: MyString
   tipo_de_trabajo: MyString
   fecha_entrega: 2017-11-20
@@ -18,6 +20,8 @@ one:
 
 two:
   contacto: two
+  despacho: two
+  factura: two
   producto: MyString
   tipo_de_trabajo: MyString
   fecha_entrega: 2017-11-20
