@@ -2,7 +2,7 @@
 
 <h1>Detalles Pedido</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Pedido</th>
@@ -21,11 +21,11 @@
   <tbody>
     <% @detalles_pedido.each do |detalle_pedido| %>
       <tr>
-        <td><%= detalle_pedido.pedido %></td>
+        <td><%= detalle_pedido.pedido.Producto %></td>
         <td><%= detalle_pedido.descripcion %></td>
         <td><%= detalle_pedido.producto %></td>
         <td><%= detalle_pedido.sustrato %></td>
-        <td><%= detalle_pedido.tecnica_de_impresion %></td>
+        <td><%= detalle_pedido.tecnica_de_impresion.tecnica %></td>
         <td><%= detalle_pedido.tamano %></td>
         <td><%= detalle_pedido.cantidad %></td>
         <td><%= detalle_pedido.precio %></td>

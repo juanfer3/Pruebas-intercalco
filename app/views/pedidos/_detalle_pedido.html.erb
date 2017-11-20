@@ -2,31 +2,39 @@
 
 <tr>
   <td class="field">
-    <%= f.input :descripcion%>
+    <%= f.text_area :descripcion%>
   </td>
   <td class="field">
-    <%= f.input :producto%>
-  </td>
-  <td class="field">
+
     <%= f.input :sustrato%>
   </td>
   <td class="field">
-    <%= f.association :tecnica_de_impresion%>
+    <%=
+      f.association :tecnica_de_impresion,
+      collection: TecnicaDeImpresion.all,
+      label_method: :tecnica,
+      value_method: :id,
+      as: :select,
+      include_blank: 'Seleccionar Tecnica de Impresión'
+
+    %>
   </td>
   <td class="field">
+
     <%= f.input :tamano%>
   </td>
 <td class="field">
+  <%= f.label :cantidad %>
   <%= f.text_field :cantidad, id: :detalle_pedido_cantidad %>
 </td>
 
 <td class="field">
-
+  <%= f.label :precio %>
   <%= f.text_field :precio, id: :detalle_pedido_precio %>
 </td>
 
 <td class="field">
-
+  <%= f.label :total %>
   <%= f.text_field :total, id: :detalle_pedido_total %>
 </td>
 

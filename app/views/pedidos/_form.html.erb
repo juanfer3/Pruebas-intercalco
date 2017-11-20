@@ -10,9 +10,22 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= f.label :contacto_id %>
+    <%=
+
+      f.association :contacto,
+      collection: Contacto.all,
+      label_method: :nombre_contacto,
+      value_method: :id,
+      as: :select,
+      include_blank: 'Seleccione el Cliente'
+    %>
+  </div>
+
   <table>
     <thead>
-      <th>Contacto</th>
       <th>Producto</th>
       <th>Tipo de Trabajo</th>
       <th>Fecha de Entrega</th>
@@ -23,10 +36,7 @@
       <th>Observaciones</th>
     </thead>
     <tbody>
-      <td class="field">
-        <%= f.label :contacto_id %>
-        <%= f.association :contacto%>
-      </td>
+
 
       <td class="field">
         <%= f.label :Producto %>
@@ -60,7 +70,8 @@
 
       <td class="field">
         <%= f.label :arte %>
-        <%= f.text_field :arte, id: :pedido_arte %>
+        <!--%= f.text_field :arte, id: :pedido_arte %-->
+        <%= f.select :arte,[['Cliente'], ['Intercalco']], include_blank:'Arte Por Parte de' %>
       </td>
 
       <td class="field">
@@ -71,12 +82,15 @@
   </table>
 
 
-
+<br>
+<br>
+<br>
 
 
 
 <table class="table">
   <thead>
+    <th>Descripcion</th>
     <th>Sustrato</th>
     <th>Tecnica</th>
     <th>Tamaño</th>

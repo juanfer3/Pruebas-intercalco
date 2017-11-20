@@ -5,7 +5,6 @@ class TecnicasDeImpresionController < ApplicationController
   # GET /tecnicas_de_impresion.json
   def index
     @tecnicas_de_impresion = TecnicaDeImpresion.all
-    @tecnicas_de_impresion.detalles_pedido.build
   end
 
   # GET /tecnicas_de_impresion/1
