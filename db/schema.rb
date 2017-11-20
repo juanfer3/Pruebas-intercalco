@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118181635) do
+ActiveRecord::Schema.define(version: 20171120153454) do
 
   create_table "acabados", force: :cascade do |t|
     t.string "tipo_de_acabado"
@@ -76,6 +76,14 @@ ActiveRecord::Schema.define(version: 20171118181635) do
     t.index ["tecnica_de_impresion_id"], name: "index_detalles_pedido_on_tecnica_de_impresion_id"
   end
 
+  create_table "lineas_de_impresiones", force: :cascade do |t|
+    t.string "tipo_de_linea"
+    t.string "descripcion"
+    t.boolean "estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "mini_pedidos", force: :cascade do |t|
     t.string "nombre"
     t.integer "cantidad"
@@ -89,19 +97,23 @@ ActiveRecord::Schema.define(version: 20171118181635) do
 
   create_table "pedidos", force: :cascade do |t|
     t.integer "contacto_id"
-    t.string "Producto"
+    t.string "producto"
     t.string "tipo_de_trabajo"
-    t.string "fecha_entrega"
-    t.string "fecha_de_pedido"
+    t.date "fecha_entrega"
+    t.date "fecha_de_pedido"
+    t.string "numero_pedido"
+    t.integer "linea_de_impresion_id"
     t.string "numero_cotizacion"
     t.string "forma_de_pago"
     t.string "arte"
     t.text "observaciones"
-    t.string "estado_pedidos"
+    t.string "estado_pedido"
+    t.float "total_fechas_decompromiso"
     t.boolean "estado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["contacto_id"], name: "index_pedidos_on_contacto_id"
+    t.index ["linea_de_impresion_id"], name: "index_pedidos_on_linea_de_impresion_id"
   end
 
   create_table "tecnicas_de_impresion", force: :cascade do |t|
@@ -110,6 +122,16 @@ ActiveRecord::Schema.define(version: 20171118181635) do
     t.boolean "estado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tiempos_de_entregas", force: :cascade do |t|
+    t.integer "pedido_id"
+    t.string "cantidad"
+    t.date "fecha_compromiso"
+    t.float "costo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pedido_id"], name: "index_tiempos_de_entregas_on_pedido_id"
   end
 
   create_table "tintas", force: :cascade do |t|

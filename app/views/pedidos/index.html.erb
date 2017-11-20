@@ -5,17 +5,19 @@
 <table>
   <thead>
     <tr>
-      <th>Empresa</th>
       <th>Contacto</th>
       <th>Producto</th>
       <th>Tipo de trabajo</th>
       <th>Fecha entrega</th>
       <th>Fecha de pedido</th>
+      <th>Numero pedido</th>
+      <th>Linea de impresion</th>
       <th>Numero cotizacion</th>
       <th>Forma de pago</th>
       <th>Arte</th>
       <th>Observaciones</th>
-      <th>Estado pedidos</th>
+      <th>Estado pedido</th>
+      <th>Estado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,17 +25,19 @@
   <tbody>
     <% @pedidos.each do |pedido| %>
       <tr>
-        <td><%= pedido.contacto.cliente.nombre%></td>
-        <td><%= pedido.contacto.nombre_contacto %></td>
-        <td><%= pedido.Producto %></td>
+        <td><%= pedido.contacto.cliente.nombre %></td>
+        <td><%= pedido.producto %></td>
         <td><%= pedido.tipo_de_trabajo %></td>
         <td><%= pedido.fecha_entrega %></td>
         <td><%= pedido.fecha_de_pedido %></td>
+        <td><%= pedido.numero_pedido %></td>
+        <td><%= pedido.linea_de_impresion.tipo_de_linea %></td>
         <td><%= pedido.numero_cotizacion %></td>
         <td><%= pedido.forma_de_pago %></td>
         <td><%= pedido.arte %></td>
         <td><%= pedido.observaciones %></td>
-        <td><%= pedido.estado_pedidos %></td>
+        <td><%= pedido.estado_pedido %></td>
+        
         <td><%= link_to 'Show', pedido %></td>
         <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
         <td><%= link_to 'Destroy', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>

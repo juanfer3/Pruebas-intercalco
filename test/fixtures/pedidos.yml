@@ -2,26 +2,32 @@
 
 one:
   contacto: one
-  Producto: MyString
+  producto: MyString
   tipo_de_trabajo: MyString
-  fecha_entrega: MyString
-  fecha_de_pedido: MyString
+  fecha_entrega: 2017-11-20
+  fecha_de_pedido: 2017-11-20
+  numero_pedido: MyString
+  linea_de_impresion: one
   numero_cotizacion: MyString
   forma_de_pago: MyString
   arte: MyString
   observaciones: MyText
-  estado_pedidos: MyString
+  estado_pedido: MyString
+  total_fechas_decompromiso: 1.5
   estado: false
 
 two:
   contacto: two
-  Producto: MyString
+  producto: MyString
   tipo_de_trabajo: MyString
-  fecha_entrega: MyString
-  fecha_de_pedido: MyString
+  fecha_entrega: 2017-11-20
+  fecha_de_pedido: 2017-11-20
+  numero_pedido: MyString
+  linea_de_impresion: two
   numero_cotizacion: MyString
   forma_de_pago: MyString
   arte: MyString
   observaciones: MyText
-  estado_pedidos: MyString
+  estado_pedido: MyString
+  total_fechas_decompromiso: 1.5
   estado: false

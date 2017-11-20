@@ -14,7 +14,6 @@
   <div class="field">
     <%= f.label :contacto_id %>
     <%=
-
       f.association :contacto,
       collection: Contacto.all,
       label_method: :nombre_contacto,
@@ -24,44 +23,67 @@
     %>
   </div>
 
+  <div class="field">
+    <%= f.label :fecha_de_pedido %>
+    <%= f.text_field :fecha_de_pedido, id: :pedido_fecha_de_pedido %>
+  </div>
+
+
+
   <table>
     <thead>
-      <th>Producto</th>
-      <th>Tipo de Trabajo</th>
-      <th>Fecha de Entrega</th>
-      <th>Fecha de Pedido</th>
+      <th>Tipo de pedido</th>
       <th>Numero De Cotización</th>
+      <th>Numero De Pedido</th>
+      <th>Descripcion del Trabajo</th>
+      <th>Linea de Impresión</th>
+
       <th>Forma de pago</th>
       <th>Pedido de Arte</th>
-      <th>Observaciones</th>
+      <th>Descripción del Pedido</th>
+
     </thead>
     <tbody>
 
-
       <td class="field">
-        <%= f.label :Producto %>
-        <%= f.text_field :Producto, id: :pedido_Producto %>
+
+        <%=f.collection_radio_buttons :estado_pedido, [['Bajo Cotizacion'] ,['Producto de linea']],:first, :last %>
       </td>
 
-      <td class="field">
-        <%= f.label :tipo_de_trabajo %>
-        <%= f.text_field :tipo_de_trabajo, id: :pedido_tipo_de_trabajo %>
-      </td>
 
-      <td class="field">
-        <%= f.label :fecha_entrega %>
-        <%= f.text_field :fecha_entrega, id: :pedido_fecha_entrega %>
-      </td>
-
-      <td class="field">
-        <%= f.label :fecha_de_pedido %>
-        <%= f.text_field :fecha_de_pedido, id: :pedido_fecha_de_pedido %>
-      </td>
 
       <td class="field">
         <%= f.label :numero_cotizacion %>
         <%= f.text_field :numero_cotizacion, id: :pedido_numero_cotizacion %>
       </td>
+
+      <td class="field">
+        <%= f.label :numero_de_pedido %>
+        <%= f.text_field :numero_pedido  %>
+      </td>
+
+      <td class="field">
+        <label for="">Descripcion del pedido</label>
+        <%= f.text_field :tipo_de_trabajo, id: :pedido_tipo_de_trabajo %>
+      </td>
+
+      <td class="field">
+
+        <%=
+
+        f.association :linea_de_impresion,
+        collection: LineaDeImpresion.all,
+        label_method: :tipo_de_linea,
+        value_method: :id,
+        as: :select,
+        include_blank: 'Linea De Impresión'
+
+        %>
+
+      </td>
+
+
+
 
       <td class="field">
         <%= f.label :forma_de_pago %>
@@ -74,8 +96,9 @@
         <%= f.select :arte,[['Cliente'], ['Intercalco']], include_blank:'Arte Por Parte de' %>
       </td>
 
+
       <td class="field">
-        <%= f.label :observaciones %>
+        <label for="">Descripcion</label>
         <%= f.text_area :observaciones, id: :pedido_observaciones %>
       </td>
     </tbody>
@@ -87,7 +110,11 @@
 <br>
 
 
+<h1>Pedidos</h1>
+<div class="actions">
+  <%= link_to_add_row('Add Pedido', f, :detalles_pedido, class: 'btn btn-primary') %>
 
+</div>
 <table class="table">
   <thead>
     <th>Descripcion</th>
@@ -106,10 +133,38 @@
   </tbody>
 </table>
 
+<br>
+
+<h1>Tiempos De Entregas</h1>
+<div class="actions">
+  <%= link_to_add_entregas('Add Entrega', f, :tiempos_de_entregas, class: 'btn btn-primary') %>
+
+</div>
+<table class="table">
+  <thead>
+
+    <th>Cantidad</th>
+    <th>Fecha De Compromiso</th>
+    <th>Costo</th>
+    <th></th>
+  </thead>
+  <tbody class='fields_entrega'>
+    <%= f.simple_fields_for :tiempos_de_entregas do |builder| %>
+      <%= render "tiempos_de_entrega", :f => builder %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
 
 
-  <div class="actions">
-    <%= link_to_add_row('Add Pedido', f, :detalles_pedido, class: 'btn btn-primary') %>
-    <%= f.submit %>
-  </div>
+<div class="field">
+  <%= f.label :fecha_entrega %>
+  <%= f.text_field :fecha_entrega, id: :pedido_fecha_entrega %>
+</div>
+
+<div>
+<%= f.submit %>
+</div>
+
 <% end %>

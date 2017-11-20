@@ -7,7 +7,7 @@
 
 <p>
   <strong>Producto:</strong>
-  <%= @pedido.Producto %>
+  <%= @pedido.producto %>
 </p>
 
 <p>
@@ -23,6 +23,16 @@
 <p>
   <strong>Fecha de pedido:</strong>
   <%= @pedido.fecha_de_pedido %>
+</p>
+
+<p>
+  <strong>Numero pedido:</strong>
+  <%= @pedido.numero_pedido %>
+</p>
+
+<p>
+  <strong>Linea de impresion:</strong>
+  <%= @pedido.linea_de_impresion %>
 </p>
 
 <p>
@@ -46,8 +56,13 @@
 </p>
 
 <p>
-  <strong>Estado pedidos:</strong>
-  <%= @pedido.estado_pedidos %>
+  <strong>Estado pedido:</strong>
+  <%= @pedido.estado_pedido %>
+</p>
+
+<p>
+  <strong>Total fechas decompromiso:</strong>
+  <%= @pedido.total_fechas_decompromiso %>
 </p>
 
 <p>

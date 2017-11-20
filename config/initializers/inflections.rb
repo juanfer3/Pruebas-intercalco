@@ -53,7 +53,23 @@
   inflect.irregular 'mini_pedido', 'mini_pedidos'
   inflect.irregular 'tamano', 'tamanos'
 
+  inflect.irregular 'numero_pedido', 'numero_pedidos'
+  inflect.irregular 'linea_de_impresion', 'lineas_de_impresiones'
+  inflect.irregular 'tipo_de_linea', 'tipos_de_lineas'
+  inflect.irregular 'tiempos_de_entrega', 'tiempos_de_entregas'
+  inflect.irregular 'costo', 'costos'
+  inflect.irregular 'fecha_compromiso', 'fechas_compromiso'
+  inflect.irregular 'total_fechas_decompromiso','totales_fechas_decompromiso'
+
  end
+
+ inflect.irregular 'factura','facturas'
+ inflect.irregular 'despacho', 'despachos'
+ inflect.irregular 'lugar_a_factura','lugares_a_facturar'
+ inflect.irregular 'recibe','reciben'
+
+end
+
 
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|

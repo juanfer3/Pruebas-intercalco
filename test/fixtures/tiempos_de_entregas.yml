@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pedido: one
+  cantidad: MyString
+  fecha_compromiso: 2017-11-20
+  costo: 1.5
+
+two:
+  pedido: two
+  cantidad: MyString
+  fecha_compromiso: 2017-11-20
+  costo: 1.5

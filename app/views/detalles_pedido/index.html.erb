@@ -21,7 +21,7 @@
   <tbody>
     <% @detalles_pedido.each do |detalle_pedido| %>
       <tr>
-        <td><%= detalle_pedido.pedido.Producto %></td>
+        <td><%= detalle_pedido.pedido.tipo_de_trabajo %></td>
         <td><%= detalle_pedido.descripcion %></td>
         <td><%= detalle_pedido.producto %></td>
         <td><%= detalle_pedido.sustrato %></td>
