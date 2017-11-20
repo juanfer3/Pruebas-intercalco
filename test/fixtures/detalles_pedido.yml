@@ -2,16 +2,22 @@
 
 one:
   pedido: one
+  descripcion: MyString
+  producto: MyString
   sustrato: MyString
   tecnica_de_impresion: one
+  tamano: MyString
   cantidad: 1.5
   precio: 1.5
   total: 1.5
 
 two:
   pedido: two
+  descripcion: MyString
+  producto: MyString
   sustrato: MyString
   tecnica_de_impresion: two
+  tamano: MyString
   cantidad: 1.5
   precio: 1.5
   total: 1.5

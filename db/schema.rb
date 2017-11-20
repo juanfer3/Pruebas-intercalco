@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171117213310) do
+ActiveRecord::Schema.define(version: 20171118181635) do
 
   create_table "acabados", force: :cascade do |t|
     t.string "tipo_de_acabado"
@@ -62,8 +62,11 @@ ActiveRecord::Schema.define(version: 20171117213310) do
 
   create_table "detalles_pedido", force: :cascade do |t|
     t.integer "pedido_id"
+    t.string "descripcion"
+    t.string "producto"
     t.string "sustrato"
     t.integer "tecnica_de_impresion_id"
+    t.string "tamano"
     t.float "cantidad"
     t.float "precio"
     t.float "total"

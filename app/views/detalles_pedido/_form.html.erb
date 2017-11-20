@@ -2,12 +2,25 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+
     <%= f.association :pedido %>
+
+    <%= f.input :descripcion %>
+
+    <%= f.input :producto %>
+
     <%= f.input :sustrato %>
+
     <%= f.association :tecnica_de_impresion %>
+
+    <%= f.input :tamano %>
+
     <%= f.input :cantidad %>
+
     <%= f.input :precio %>
+
     <%= f.input :total %>
+
   </div>
 
   <div class="form-actions">

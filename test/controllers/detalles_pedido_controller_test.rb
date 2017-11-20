@@ -17,7 +17,7 @@ class DetallesPedidoControllerTest < ActionDispatch::IntegrationTest
 
   test "should create detalle_pedido" do
     assert_difference('DetallePedido.count') do
-      post detalles_pedido_url, params: { detalle_pedido: { cantidad: @detalle_pedido.cantidad, pedido_id: @detalle_pedido.pedido_id, precio: @detalle_pedido.precio, sustrato: @detalle_pedido.sustrato, tecnica_de_impresion_id: @detalle_pedido.tecnica_de_impresion_id, total: @detalle_pedido.total } }
+      post detalles_pedido_url, params: { detalle_pedido: { cantidad: @detalle_pedido.cantidad, descripcion: @detalle_pedido.descripcion, pedido_id: @detalle_pedido.pedido_id, precio: @detalle_pedido.precio, producto: @detalle_pedido.producto, sustrato: @detalle_pedido.sustrato, tamano: @detalle_pedido.tamano, tecnica_de_impresion_id: @detalle_pedido.tecnica_de_impresion_id, total: @detalle_pedido.total } }
     end
 
     assert_redirected_to detalle_pedido_url(DetallePedido.last)
@@ -34,7 +34,7 @@ class DetallesPedidoControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update detalle_pedido" do
-    patch detalle_pedido_url(@detalle_pedido), params: { detalle_pedido: { cantidad: @detalle_pedido.cantidad, pedido_id: @detalle_pedido.pedido_id, precio: @detalle_pedido.precio, sustrato: @detalle_pedido.sustrato, tecnica_de_impresion_id: @detalle_pedido.tecnica_de_impresion_id, total: @detalle_pedido.total } }
+    patch detalle_pedido_url(@detalle_pedido), params: { detalle_pedido: { cantidad: @detalle_pedido.cantidad, descripcion: @detalle_pedido.descripcion, pedido_id: @detalle_pedido.pedido_id, precio: @detalle_pedido.precio, producto: @detalle_pedido.producto, sustrato: @detalle_pedido.sustrato, tamano: @detalle_pedido.tamano, tecnica_de_impresion_id: @detalle_pedido.tecnica_de_impresion_id, total: @detalle_pedido.total } }
     assert_redirected_to detalle_pedido_url(@detalle_pedido)
   end
 

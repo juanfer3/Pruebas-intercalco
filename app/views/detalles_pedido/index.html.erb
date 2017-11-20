@@ -6,8 +6,11 @@
   <thead>
     <tr>
       <th>Pedido</th>
+      <th>Descripcion</th>
+      <th>Producto</th>
       <th>Sustrato</th>
       <th>Tecnica de impresion</th>
+      <th>Tamano</th>
       <th>Cantidad</th>
       <th>Precio</th>
       <th>Total</th>
@@ -19,8 +22,11 @@
     <% @detalles_pedido.each do |detalle_pedido| %>
       <tr>
         <td><%= detalle_pedido.pedido %></td>
+        <td><%= detalle_pedido.descripcion %></td>
+        <td><%= detalle_pedido.producto %></td>
         <td><%= detalle_pedido.sustrato %></td>
         <td><%= detalle_pedido.tecnica_de_impresion %></td>
+        <td><%= detalle_pedido.tamano %></td>
         <td><%= detalle_pedido.cantidad %></td>
         <td><%= detalle_pedido.precio %></td>
         <td><%= detalle_pedido.total %></td>

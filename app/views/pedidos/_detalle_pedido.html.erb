@@ -1,14 +1,22 @@
 
 
 <tr>
-  <td>
+  <td class="field">
+    <%= f.input :descripcion%>
+  </td>
+  <td class="field">
+    <%= f.input :producto%>
+  </td>
+  <td class="field">
     <%= f.input :sustrato%>
   </td>
-  <td>
+  <td class="field">
     <%= f.association :tecnica_de_impresion%>
   </td>
-
-<td>
+  <td class="field">
+    <%= f.input :tamano%>
+  </td>
+<td class="field">
   <%= f.text_field :cantidad, id: :detalle_pedido_cantidad %>
 </td>
 
